@@ -19,14 +19,18 @@ add your dynamic proxy to webpack config file.
 const createDynamicProxy = require('webpack-dynamic-proxy')
 
 const config = {
-    proxy: createDynamicProxy(),
+    devServer: {
+        proxy: createDynamicProxy(),
+    },
 }
 
 /* a specify proxy config file */
 const config = {
-    proxy: createDynamicProxy({
-        filename: "path/to/file/proxy.config.js",
-    }),
+    devServer: {
+        proxy: createDynamicProxy({
+            filename: "path/to/file/proxy.config.js",
+        }),
+    },
 }
 ```
-then will watch your proxy.config.js
+then will watch your proxy.config.js.

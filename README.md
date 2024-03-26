@@ -1,5 +1,5 @@
 # webpack-dynamic-proxy
-dynamic proxy for webpack.
+Dynamic proxy for webpack. Watching config file in real time to avoid reboot webpack everytime.
 ## How to use?
 create a proxy.config.js on your project root directory.
 ```js

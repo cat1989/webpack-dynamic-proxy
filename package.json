@@ -1,0 +1,29 @@
+{
+  "name": "webpack-dynamic-proxy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "webpack serve --config test/webpack.config.js",
+    "serve": "node test/index.js"
+  },
+  "keywords": [
+    "webpack",
+    "proxy",
+    "webpack-dev-server"
+  ],
+  "author": "cat1989",
+  "license": "ISC",
+  "devDependencies": {
+    "axios": "^1.6.8",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "html-webpack-plugin": "^5.6.0",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  },
+  "files": [
+    "src"
+  ]
+}

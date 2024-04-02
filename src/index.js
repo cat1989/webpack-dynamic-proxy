@@ -5,14 +5,17 @@ const createDynamicProxy = (options = {}) => {
     const {
         filename = path.resolve(process.cwd(), './proxy.config.js'),
     } = options
-    let proxies = require(filename)
-    fs.watchFile(filename, () => {
-        delete require.cache[require.resolve(filename)]
+    let proxies = []
+    if (fs.existsSync(filename)) {
         proxies = require(filename)
-    })
+        fs.watchFile(filename, () => {
+            delete require.cache[require.resolve(filename)]
+            proxies = require(filename)
+        })
+    }
     return proxies.map(({ target, ...rest }, index) => ({
         ...rest,
-        router: () => proxies[index].target,
+        router: () => proxies[index]?.target ?? target,
     }))
 }
 
